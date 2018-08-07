@@ -1,0 +1,33 @@
+<h2>
+  Employee List
+</h2>
+
+<br>
+
+<p>{{internalMessage}}</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Departmant</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor='let employee of employees'>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.LastName}}</td>
+        <td>{{employee.Department}}</td>
+        <td><a style="cursor: pointer;" (click)='detailsClick(employee.Id);'>Details</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+<br><br>
+<div class="panel panel-primary" *ngIf='clickedEmployee'>
+  <div class="panel-heading">
+      Details
+  </div>
+  <app-employee-details [empData]='clickedEmployee' (messageEvent)="receiveMessage($event)"></app-employee-details>
+</div>

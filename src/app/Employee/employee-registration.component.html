@@ -1,0 +1,28 @@
+
+ <div class="text-left">
+   <h1>Add New Employee</h1>
+  </div><br>
+<div style="width: 50%;">
+ 
+  <form novalidate #employeeForm='ngForm' (ngSubmit)= 'onSubmit(employeeForm)'>
+      <div class="form-group">
+          <label for="FirstName">Firstname:</label>
+          <input type="text" class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)] = 'employee.FirstName' required>
+          <span class="help-block" *ngIf="FirstName.errors && (FirstName.dirty || FirstName.touched)">Please enter First Name.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Lastname:</label>
+            <input type="text" class="form-control" name="LastName" #LastName="ngModel" [(ngModel)] = 'employee.LastName' required>
+            <span class="help-block" *ngIf="LastName.errors && (LastName.dirty || LastName.touched)">Please enter Last Name.</span>
+        </div>
+
+        <div class="form-group">
+              <label for="Department">Department:</label>
+              <input type="text" class="form-control" name="Department" #Department="ngModel" [(ngModel)] = 'employee.Department' required>
+              <span class="help-block" *ngIf="Department.errors && (Department.dirty || Department.touched)">Please enter Department.</span>
+        </div>
+
+        <input class="btn btn-primary" type="submit" [disabled] = "!employeeForm.valid" value="Create">
+  </form>    
+</div>

@@ -1,0 +1,18 @@
+
+
+<table class="table table-fixed" *ngIf='employee'>
+  <tr>
+    <td>Firstname</td>
+    <td>{{employee.FirstName}}</td>
+  </tr>
+  <tr>
+      <td>Lastname</td>
+      <td>{{employee.LastName}}</td>
+    </tr>
+    <tr>
+        <td>Department</td>
+        <td>{{employee.Department}}</td>
+      </tr>
+
+    &nbsp;  <input type="button" class="btn btn-default" value="Send message" (click)='sendMessageClick()'>
+</table>

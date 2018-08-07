@@ -1,0 +1,16 @@
+<nav class="navbar navbar-inverse" style="border-radius: 0">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" heading-highlighter [routerLink]="['/welcome']">Employee Management</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/employees/add-employee']">Add Employee</a></li>
+        <li><a [routerLink]="['/employees']">Employee List</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="breadcrumb container">
+    <i>
+    You are at : {{currentPageName}}
+  </i>
+  </div>
